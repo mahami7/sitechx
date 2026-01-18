@@ -3,7 +3,7 @@
     {
       "id": "hero",
       "description": "Smart home technology hub",
-      "imageUrl": "/hero-background.jpg",
+      "imageUrl": "/hero-background.jpg?v=1",
       "imageHint": "smart home technology"
     },
     {
