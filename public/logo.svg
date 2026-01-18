@@ -1,0 +1,14 @@
+<svg width="180" height="45" viewBox="0 0 180 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .text {
+      font: bold 30px sans-serif;
+      fill: hsl(var(--primary));
+    }
+    @media (prefers-color-scheme: dark) {
+      .text {
+        fill: hsl(var(--primary-foreground));
+      }
+    }
+  </style>
+  <text x="10" y="32" class="text">Sitechx</text>
+</svg>
