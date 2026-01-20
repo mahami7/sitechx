@@ -3,7 +3,7 @@
     {
       "id": "hero",
       "description": "Smart home technology hub",
-      "imageUrl": "/hero-background.jpg?v=2",
+      "imageUrl": "/hero-background.jpg?v=3",
       "imageHint": "smart home technology"
     },
     {
@@ -21,7 +21,7 @@
     {
       "id": "why-us",
       "description": "A futuristic interface showing an integrated smart home ecosystem.",
-      "imageUrl": "https://images.unsplash.com/photo-1558137623-ce9384355333?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxzbWFydCUyMGVjb3N5c3RlbXxlbnwwfHx8fDE3Njg4MzYxMDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1558137623-ce9384355333?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxzbWFydCUyMGVjb3N5c3RlbXxlbnwwfHx8fDE3Njg4MzYxMDV8MA&ixlib=rb-4.1.0&q=80&w=1080&v=1",
       "imageHint": "smart ecosystem"
     }
   ]
