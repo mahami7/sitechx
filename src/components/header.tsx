@@ -37,7 +37,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
         <Link href="/" className="mr-6 flex items-center gap-2">
-          <Image src="/logo.png?v=3" alt="Sitechx" width={180} height={45} />
+          <Image src="/logo.png?v=4" alt="Sitechx" width={180} height={45} />
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
           {navLinks.map((link) => (
@@ -58,7 +58,7 @@ export default function Header() {
             <SheetContent side="right">
               <div className="flex flex-col gap-6 p-6">
                 <Link href="/" className="mb-4 flex items-center gap-2">
-                  <Image src="/logo.png?v=3" alt="Sitechx" width={180} height={45} />
+                  <Image src="/logo.png?v=4" alt="Sitechx" width={180} height={45} />
                 </Link>
                 <nav className="flex flex-col gap-4">
                   {navLinks.map((link) => (
