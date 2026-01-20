@@ -25,6 +25,7 @@ const industries = [
 
 export default function Home() {
   const heroImage = PlaceHolderImages.find((img) => img.id === 'hero');
+  const whyUsImage = PlaceHolderImages.find((img) => img.id === 'why-us');
 
   return (
     <div className="flex flex-col">
@@ -57,21 +58,36 @@ export default function Home() {
       </section>
 
       <section id="why-choose-us" className="py-16 md:py-24 bg-background">
-        <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Why Choose Us?</h2>
-            <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">
-              We provide end-to-end solutions to create truly smart ecosystems.
-            </p>
-            <div className="mt-12 max-w-4xl mx-auto">
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 text-left">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <div className="text-center md:text-left">
+                <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Why Choose Us?</h2>
+                <p className="mt-4 max-w-2xl mx-auto md:mx-0 text-muted-foreground">
+                  We provide end-to-end solutions to create truly smart ecosystems.
+                </p>
+              </div>
+              <ul className="space-y-6">
                 {whyChooseUs.map((reason, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <CheckCircle2 className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
+                  <li key={index} className="flex items-start gap-4">
+                    <CheckCircle2 className="h-7 w-7 text-accent flex-shrink-0 mt-1" />
                     <span className="text-muted-foreground text-lg">{reason}</span>
                   </li>
                 ))}
               </ul>
             </div>
+            <div className="relative h-96 w-full rounded-lg overflow-hidden shadow-lg">
+              {whyUsImage && (
+                <Image
+                  src={whyUsImage.imageUrl}
+                  alt={whyUsImage.description}
+                  fill
+                  className="object-cover"
+                  data-ai-hint={whyUsImage.imageHint}
+                />
+              )}
+            </div>
+          </div>
         </div>
       </section>
 
