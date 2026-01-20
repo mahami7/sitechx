@@ -15,7 +15,7 @@ export default function Footer() {
         <div className="grid gap-8 md:grid-cols-3">
           <div className="flex flex-col gap-2">
             <Link href="/" className="flex items-center gap-2">
-              <Image src="/logo.png" alt="Sitechx" width={180} height={45} />
+              <Image src="/logo.png?v=3" alt="Sitechx" width={180} height={45} />
             </Link>
             <p className="text-muted-foreground text-sm">
               A seamless, secure, and future-ready living and working experience.
