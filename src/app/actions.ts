@@ -3,6 +3,9 @@
 import { z } from 'zod';
 import { db } from '@/lib/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const contactSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
@@ -38,8 +41,10 @@ export async function submitContactForm(prevState: State, formData: FormData) {
     };
   }
   
+  const { name, email, phone, message } = validatedFields.data;
+
   try {
-    const { name, email, phone, message } = validatedFields.data;
+    // 1. Save message to Firestore
     await addDoc(collection(db, 'messages'), {
       name,
       email,
@@ -47,9 +52,27 @@ export async function submitContactForm(prevState: State, formData: FormData) {
       message,
       createdAt: serverTimestamp(),
     });
+
+    // 2. Send email notification via Resend
+    await resend.emails.send({
+      from: 'onboarding@resend.dev', // This is a default for testing, you'll need a verified domain for production
+      to: process.env.RECIPIENT_EMAIL!,
+      subject: `New Contact Form Message from ${name}`,
+      reply_to: email,
+      html: `
+        <h1>New message from your Sitechx contact form</h1>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ''}
+        <hr>
+        <p><strong>Message:</strong></p>
+        <p>${message}</p>
+      `,
+    });
+
     return { message: 'Thank you for your message! We will get back to you soon.', success: true, errors: {} };
-  } catch (e) {
-    console.error('Error adding document: ', e);
-    return { message: 'Database Error: Failed to send message.', success: false, errors: {} };
+  } catch (error) {
+    console.error('Error submitting contact form: ', error);
+    return { message: 'An internal error occurred. Failed to send message.', success: false, errors: {} };
   }
 }
