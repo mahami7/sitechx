@@ -1,7 +1,6 @@
 'use server';
 
 import { z } from 'zod';
-import { Resend } from 'resend';
 
 const contactSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
@@ -58,6 +57,7 @@ export async function submitContactForm(prevState: State, formData: FormData) {
       throw new Error('Server is not configured to send emails.');
     }
     
+    const { Resend } = await import('resend');
     const resend = new Resend(process.env.RESEND_API_KEY);
     await resend.emails.send({
       from: 'onboarding@resend.dev', // This is a default for testing, you'll need a verified domain for production
