@@ -15,14 +15,14 @@
     {
       "id": "contact",
       "description": "Close up of a person typing on a laptop.",
-      "imageUrl": "https://images.unsplash.com/photo-1625297673112-06b459140555?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0eXBpbmclMjBsYXB0b3B8ZW58MHx8fHwxNzY5MjI5NTM0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1647154933795-422ba6b3034e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8dHlwaW5nJTIwbGFwdG9wfGVufDB8fHx8MTc2OTIyOTUzNHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "typing laptop"
     },
     {
       "id": "why-us",
-      "description": "A futuristic interface showing an integrated smart home ecosystem.",
-      "imageUrl": "https://images.unsplash.com/photo-1711352274684-561314a29616?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzbWFydCUyMGVjb3N5c3RlbXxlbnwwfHx8fDE3NjkyMjk1MzR8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "smart ecosystem"
+      "description": "A man in a suit facing a digital, wireframe humanoid, representing the intersection of humanity and technology.",
+      "imageUrl": "https://storage.googleapis.com/project-dream-pollen-prod/images/425a892f-b44c-47a3-8321-7299a9a38f32.png",
+      "imageHint": "AI human"
     }
   ]
 }
