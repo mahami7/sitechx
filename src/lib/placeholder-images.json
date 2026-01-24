@@ -20,9 +20,9 @@
     },
     {
       "id": "why-us",
-      "description": "A man in a suit facing a digital, wireframe humanoid, representing the intersection of humanity and technology.",
-      "imageUrl": "https://storage.googleapis.com/project-dream-pollen-prod/images/425a892f-b44c-47a3-8321-7299a9a38f32.png",
-      "imageHint": "AI human"
+      "description": "A team of engineers collaborating on a project.",
+      "imageUrl": "https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0ZWFtJTIwY29sbGFib3JhdGlvbnxlbnwwfHx8fDE3Njg2NDc5NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "team collaboration"
     }
   ]
 }
