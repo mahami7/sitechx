@@ -5,8 +5,6 @@ import { db } from '@/lib/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const contactSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
   email: z.string().email({ message: 'Please enter a valid email.' }),
@@ -54,6 +52,7 @@ export async function submitContactForm(prevState: State, formData: FormData) {
     });
 
     // 2. Send email notification via Resend
+    const resend = new Resend(process.env.RESEND_API_KEY);
     await resend.emails.send({
       from: 'onboarding@resend.dev', // This is a default for testing, you'll need a verified domain for production
       to: process.env.RECIPIENT_EMAIL!,
