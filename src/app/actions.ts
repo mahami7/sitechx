@@ -1,8 +1,6 @@
 'use server';
 
 import { z } from 'zod';
-import { db } from '@/lib/firebase';
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { Resend } from 'resend';
 
 const contactSchema = z.object({
@@ -42,7 +40,10 @@ export async function submitContactForm(prevState: State, formData: FormData) {
   const { name, email, phone, message } = validatedFields.data;
 
   try {
-    // 1. Save message to Firestore
+    // 1. Save message to Firestore (initialize on demand)
+    const { db } = await import('@/lib/firebase');
+    const { collection, addDoc, serverTimestamp } = await import('firebase/firestore');
+
     await addDoc(collection(db, 'messages'), {
       name,
       email,
@@ -51,11 +52,16 @@ export async function submitContactForm(prevState: State, formData: FormData) {
       createdAt: serverTimestamp(),
     });
 
-    // 2. Send email notification via Resend
+    // 2. Send email notification via Resend (initialize on demand)
+    if (!process.env.RESEND_API_KEY || !process.env.RECIPIENT_EMAIL) {
+      console.error('Resend environment variables are not set.');
+      throw new Error('Server is not configured to send emails.');
+    }
+    
     const resend = new Resend(process.env.RESEND_API_KEY);
     await resend.emails.send({
       from: 'onboarding@resend.dev', // This is a default for testing, you'll need a verified domain for production
-      to: process.env.RECIPIENT_EMAIL!,
+      to: process.env.RECIPIENT_EMAIL,
       subject: `New Contact Form Message from ${name}`,
       reply_to: email,
       html: `
@@ -72,6 +78,7 @@ export async function submitContactForm(prevState: State, formData: FormData) {
     return { message: 'Thank you for your message! We will get back to you soon.', success: true, errors: {} };
   } catch (error) {
     console.error('Error submitting contact form: ', error);
-    return { message: 'An internal error occurred. Failed to send message.', success: false, errors: {} };
+    const errorMessage = error instanceof Error ? error.message : 'An internal error occurred.';
+    return { message: `${errorMessage} Failed to send message.`, success: false, errors: {} };
   }
 }
