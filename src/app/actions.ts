@@ -39,19 +39,7 @@ export async function submitContactForm(prevState: State, formData: FormData) {
   const { name, email, phone, message } = validatedFields.data;
 
   try {
-    // 1. Save message to Firestore (initialize on demand)
-    const { db } = await import('@/lib/firebase');
-    const { collection, addDoc, serverTimestamp } = await import('firebase/firestore');
-
-    await addDoc(collection(db, 'messages'), {
-      name,
-      email,
-      phone,
-      message,
-      createdAt: serverTimestamp(),
-    });
-
-    // 2. Send email notification via Resend (initialize on demand)
+    // Send email notification via Resend (initialize on demand)
     if (!process.env.RESEND_API_KEY || !process.env.RECIPIENT_EMAIL) {
       console.error('Resend environment variables are not set.');
       throw new Error('Server is not configured to send emails.');
