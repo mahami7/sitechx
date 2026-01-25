@@ -5,10 +5,16 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Menu, Globe } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { Locale } from "@/lib/i18n";
+import { i18n, Locale } from "@/lib/i18n";
 
 export default function Header({ lang, dictionary }: { lang: Locale, dictionary: any }) {
   const pathname = usePathname();
@@ -21,6 +27,13 @@ export default function Header({ lang, dictionary }: { lang: Locale, dictionary:
     { href: `/${lang}/portfolio/services`, label: t.solutions },
     { href: `/${lang}/portfolio/contact`, label: t.contact },
   ];
+
+  const redirectedPathName = (locale: Locale) => {
+    if (!pathname) return "/";
+    const segments = pathname.split("/");
+    segments[1] = locale;
+    return segments.join("/");
+  };
 
   const NavLink = ({ href, label }: { href: string; label: string }) => (
     <Link
@@ -35,6 +48,44 @@ export default function Header({ lang, dictionary }: { lang: Locale, dictionary:
     </Link>
   );
 
+  const LanguageSwitcher = () => (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="ghost" size="icon">
+          <Globe className="h-5 w-5" />
+          <span className="sr-only">Change language</span>
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end">
+        {i18n.locales.map((locale) => (
+          <DropdownMenuItem key={locale} asChild>
+            <Link href={redirectedPathName(locale as Locale)}>{locale.toUpperCase()}</Link>
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+
+    const LanguageSwitcherMobile = () => (
+    <div className="flex justify-center pt-4">
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="outline">
+              <Globe className="mr-2 h-5 w-5" />
+              {t.changeLanguage}
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="center">
+            {i18n.locales.map((locale) => (
+              <DropdownMenuItem key={locale} asChild>
+                <Link href={redirectedPathName(locale as Locale)}>{locale.toUpperCase()}</Link>
+              </DropdownMenuItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
+    </div>
+  );
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
@@ -46,7 +97,8 @@ export default function Header({ lang, dictionary }: { lang: Locale, dictionary:
             <NavLink key={link.href} {...link} />
           ))}
         </nav>
-        <div className="flex flex-1 items-center justify-end gap-4">
+        <div className="flex flex-1 items-center justify-end gap-2">
+          <LanguageSwitcher />
           <Button asChild className="hidden md:flex" variant="outline">
             <Link href={`/${lang}/portfolio/contact`}>{t.contactUs}</Link>
           </Button>
@@ -70,6 +122,7 @@ export default function Header({ lang, dictionary }: { lang: Locale, dictionary:
                 <Button asChild className="mt-4" onClick={() => setSheetOpen(false)}>
                   <Link href={`/${lang}/portfolio/contact`}>{t.contactUs}</Link>
                 </Button>
+                <LanguageSwitcherMobile />
               </div>
             </SheetContent>
           </Sheet>
