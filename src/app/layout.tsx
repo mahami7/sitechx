@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import { Toaster } from '@/components/ui/toaster';
+import Script from 'next/script';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -31,6 +32,18 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
           rel="stylesheet"
         />
+        {/* Google Translate Init Script */}
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            function googleTranslateElementInit() {
+              new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,fr,ar',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+              }, 'google_translate_element');
+            }
+          `
+        }} />
       </head>
       <body className={cn('min-h-screen bg-background font-body antialiased', inter.variable)}>
         <div className="relative flex min-h-dvh flex-col bg-background">
@@ -39,6 +52,11 @@ export default function RootLayout({
           <Footer />
         </div>
         <Toaster />
+        {/* Load Google Translate API */}
+        <Script 
+          src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" 
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
