@@ -1,26 +1,18 @@
-'use client'
+'use client';
 
 import Link from 'next/link';
 import { Button, type ButtonProps } from '@/components/ui/button';
 import { WhatsappIcon } from '@/components/icons/whatsapp';
-import { Locale, getDictionary } from '@/lib/i18n';
-import { useEffect, useState } from 'react';
 
 interface WhatsappButtonProps extends ButtonProps {
-  lang: Locale;
+  dictionary: {
+    chat: string;
+    message: string;
+  };
 }
 
-export default function WhatsappButton({ lang, ...props }: WhatsappButtonProps) {
-  const [dictionary, setDictionary] = useState<any>(null);
-
-  useEffect(() => {
-    const fetchDictionary = async () => {
-      const dict = await getDictionary(lang);
-      setDictionary(dict.whatsappButton);
-    };
-    fetchDictionary();
-  }, [lang]);
-  
+export default function WhatsappButton({ dictionary, ...props }: WhatsappButtonProps) {
+  // The old pages might not pass a dictionary. This prevents a crash.
   if (!dictionary) {
     return (
       <Button {...props} disabled>

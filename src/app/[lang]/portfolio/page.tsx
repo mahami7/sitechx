@@ -53,7 +53,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
             <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
               <Link href={`/${lang}/portfolio/contact`}>{t.getConsultation}</Link>
             </Button>
-            <WhatsappButton lang={lang} size="lg" variant="secondary" />
+            <WhatsappButton dictionary={dictionary.whatsappButton} size="lg" variant="secondary" />
           </div>
         </div>
       </section>

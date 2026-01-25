@@ -56,7 +56,7 @@ export default async function ContactPage({ params: { lang } }: { params: { lang
               </div>
             </div>
             <div className='pt-8'>
-              <WhatsappButton lang={lang} />
+              <WhatsappButton dictionary={dictionary.whatsappButton} />
             </div>
           </div>
           <div className="p-8 md:p-12 bg-secondary/50">
