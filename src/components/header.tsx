@@ -28,6 +28,12 @@ export default function Header({ lang, dictionary }: { lang: Locale, dictionary:
     { href: `/${lang}/portfolio/contact`, label: t.contact },
   ];
 
+  const languageNames: Record<Locale, string> = {
+    en: "English",
+    fr: "Français",
+    ar: "العربية",
+  };
+
   const redirectedPathName = (locale: Locale) => {
     if (!pathname) return "/";
     const segments = pathname.split("/");
@@ -59,7 +65,7 @@ export default function Header({ lang, dictionary }: { lang: Locale, dictionary:
       <DropdownMenuContent align="end">
         {i18n.locales.map((locale) => (
           <DropdownMenuItem key={locale} asChild>
-            <Link href={redirectedPathName(locale as Locale)}>{locale.toUpperCase()}</Link>
+            <Link href={redirectedPathName(locale as Locale)}>{languageNames[locale as Locale]}</Link>
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>
@@ -78,7 +84,7 @@ export default function Header({ lang, dictionary }: { lang: Locale, dictionary:
           <DropdownMenuContent align="center">
             {i18n.locales.map((locale) => (
               <DropdownMenuItem key={locale} asChild>
-                <Link href={redirectedPathName(locale as Locale)}>{locale.toUpperCase()}</Link>
+                <Link href={redirectedPathName(locale as Locale)}>{languageNames[locale as Locale]}</Link>
               </DropdownMenuItem>
             ))}
           </DropdownMenuContent>
