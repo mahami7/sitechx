@@ -56,3 +56,46 @@
     @apply bg-background text-foreground;
   }
 }
+/* ... keep all your existing code ... */
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom Styles for Google Translator */
+.goog-logo-link, 
+.goog-te-gadget span, 
+.goog-te-banner-frame,
+#goog-gt-tt {
+  display: none !important;
+}
+
+.goog-te-gadget {
+  color: transparent !important;
+  font-size: 0 !important;
+}
+
+.goog-te-combo {
+  @apply bg-background border border-input text-foreground text-sm rounded-md px-2 py-1 outline-none transition-colors;
+  font-family: 'Inter', sans-serif !important;
+}
+
+.goog-te-combo:hover {
+  @apply border-primary;
+}
+
+/* Fix for the top bar space Google adds */
+body {
+  top: 0 !important;
+}
+.skiptranslate {
+  display: none !important;
+}
+.skiptranslate.goog-te-gadget {
+  display: block !important;
+}
