@@ -1,14 +1,17 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Locale } from '@/lib/i18n-config';
+import en from '@/dictionaries/en.json';
 
-export default function Footer({ lang, dictionary }: { lang: Locale, dictionary: any }) {
-  const t = dictionary.footer;
+export default function Footer({ lang, dictionary }: { lang?: Locale, dictionary?: any }) {
+  const effectiveDictionary = dictionary || en;
+  const t = effectiveDictionary.footer;
+
   const navLinks = [
-    { href: `/${lang}/portfolio`, label: dictionary.header.home },
-    { href: `/${lang}/portfolio/about`, label: dictionary.header.about },
-    { href: `/${lang}/portfolio/services`, label: dictionary.header.solutions },
-    { href: `/${lang}/portfolio/contact`, label: dictionary.header.contact },
+    { href: lang ? `/${lang}/portfolio` : '/portfolio', label: effectiveDictionary.header.home },
+    { href: lang ? `/${lang}/portfolio/about` : '/portfolio/about', label: effectiveDictionary.header.about },
+    { href: lang ? `/${lang}/portfolio/services` : '/portfolio/services', label: effectiveDictionary.header.solutions },
+    { href: lang ? `/${lang}/portfolio/contact` : '/portfolio/contact', label: effectiveDictionary.header.contact },
   ];
 
   return (
@@ -16,7 +19,7 @@ export default function Footer({ lang, dictionary }: { lang: Locale, dictionary:
       <div className="container mx-auto px-4 py-12">
         <div className="grid gap-8 md:grid-cols-3">
           <div className="flex flex-col gap-2">
-            <Link href={`/${lang}/portfolio`} className="flex items-center gap-2">
+            <Link href={lang ? `/${lang}/portfolio` : '/portfolio'} className="flex items-center gap-2">
               <Image src="/logo.png?v=6" alt="Sitechx" width={180} height={45} />
             </Link>
             <p className="text-muted-foreground text-sm">

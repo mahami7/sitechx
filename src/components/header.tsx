@@ -15,17 +15,20 @@ import { Menu, Globe } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { i18n, type Locale } from "@/lib/i18n-config";
+import en from '@/dictionaries/en.json';
 
-export default function Header({ lang, dictionary }: { lang: Locale, dictionary: any }) {
+export default function Header({ lang, dictionary }: { lang?: Locale, dictionary?: any }) {
   const pathname = usePathname();
   const [isSheetOpen, setSheetOpen] = useState(false);
-  const t = dictionary.header;
+  const effectiveDictionary = dictionary || en;
+  const t = effectiveDictionary.header;
+  const effectiveLang = lang || 'en';
 
   const navLinks = [
-    { href: `/${lang}/portfolio`, label: t.home },
-    { href: `/${lang}/portfolio/about`, label: t.about },
-    { href: `/${lang}/portfolio/services`, label: t.solutions },
-    { href: `/${lang}/portfolio/contact`, label: t.contact },
+    { href: lang ? `/${lang}/portfolio` : '/portfolio', label: t.home },
+    { href: lang ? `/${lang}/portfolio/about` : '/portfolio/about', label: t.about },
+    { href: lang ? `/${lang}/portfolio/services` : '/portfolio/services', label: t.solutions },
+    { href: lang ? `/${lang}/portfolio/contact` : '/portfolio/contact', label: t.contact },
   ];
 
   const languageNames: Record<Locale, string> = {
@@ -95,7 +98,7 @@ export default function Header({ lang, dictionary }: { lang: Locale, dictionary:
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
-        <Link href={`/${lang}/portfolio`} className="mr-6 flex items-center gap-2">
+        <Link href={lang ? `/${lang}/portfolio` : '/portfolio'} className="mr-6 flex items-center gap-2">
           <Image src="/logo.png?v=6" alt="Sitechx" width={180} height={45} />
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
@@ -104,9 +107,9 @@ export default function Header({ lang, dictionary }: { lang: Locale, dictionary:
           ))}
         </nav>
         <div className="flex flex-1 items-center justify-end gap-2">
-          <LanguageSwitcher />
+          {lang && <LanguageSwitcher />}
           <Button asChild className="hidden md:flex" variant="outline">
-            <Link href={`/${lang}/portfolio/contact`}>{t.contactUs}</Link>
+            <Link href={lang ? `/${lang}/portfolio/contact` : '/portfolio/contact'}>{t.contactUs}</Link>
           </Button>
           <Sheet open={isSheetOpen} onOpenChange={setSheetOpen}>
             <SheetTrigger asChild>
@@ -115,9 +118,9 @@ export default function Header({ lang, dictionary }: { lang: Locale, dictionary:
                 <span className="sr-only">Toggle Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side={lang === 'ar' ? 'left' : 'right'}>
+            <SheetContent side={effectiveLang === 'ar' ? 'left' : 'right'}>
               <div className="flex flex-col gap-6 p-6">
-                <Link href={`/${lang}/portfolio`} className="mb-4 flex items-center gap-2">
+                <Link href={lang ? `/${lang}/portfolio` : '/portfolio'} className="mb-4 flex items-center gap-2">
                   <Image src="/logo.png?v=6" alt="Sitechx" width={180} height={45} />
                 </Link>
                 <nav className="flex flex-col gap-4">
@@ -126,9 +129,9 @@ export default function Header({ lang, dictionary }: { lang: Locale, dictionary:
                   ))}
                 </nav>
                 <Button asChild className="mt-4" onClick={() => setSheetOpen(false)}>
-                  <Link href={`/${lang}/portfolio/contact`}>{t.contactUs}</Link>
+                  <Link href={lang ? `/${lang}/portfolio/contact` : '/portfolio/contact'}>{t.contactUs}</Link>
                 </Button>
-                <LanguageSwitcherMobile />
+                {lang && <LanguageSwitcherMobile />}
               </div>
             </SheetContent>
           </Sheet>
