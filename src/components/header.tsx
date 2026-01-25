@@ -14,7 +14,7 @@ import {
 import { Menu, Globe } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { i18n, Locale } from "@/lib/i18n";
+import { i18n, type Locale } from "@/lib/i18n-config";
 
 export default function Header({ lang, dictionary }: { lang: Locale, dictionary: any }) {
   const pathname = usePathname();

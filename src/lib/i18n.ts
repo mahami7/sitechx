@@ -1,11 +1,7 @@
 import 'server-only'
+import { type Locale } from './i18n-config'
 
-export const i18n = {
-  defaultLocale: 'en',
-  locales: ['en', 'fr', 'ar'],
-} as const
-
-export type Locale = (typeof i18n)['locales'][number]
+export { i18n, type Locale } from './i18n-config'
 
 const dictionaries: Record<Locale, () => Promise<any>> = {
   en: () => import('@/dictionaries/en.json').then((module) => module.default),

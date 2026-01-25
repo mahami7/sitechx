@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Locale } from '@/lib/i18n';
+import type { Locale } from '@/lib/i18n-config';
 
 export default function Footer({ lang, dictionary }: { lang: Locale, dictionary: any }) {
   const t = dictionary.footer;
