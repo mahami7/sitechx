@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import '../globals.css';
 import { cn } from '@/lib/utils';
-import { Toaster } from '@/components/ui/toaster';
 import { i18n } from '@/lib/i18n';
 
 const inter = Inter({
@@ -27,26 +26,15 @@ export default function RootLayout({
   children: React.ReactNode;
   params: { lang: 'en' | 'fr' | 'ar' };
 }>) {
+  // This is a nested layout. It must not render <html> or <body>.
+  // To fix the hydration error, we wrap the children in a div and apply
+  // language-specific direction and classes.
   return (
-    <html lang={params.lang} dir={params.lang === 'ar' ? 'rtl' : 'ltr'}>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body
-        className={cn(
-          'min-h-screen bg-background font-body antialiased',
-          inter.variable,
-          params.lang === 'ar' && 'font-sans' // A more appropriate Arabic font can be configured here
-        )}
-      >
-        {children}
-        <Toaster />
-      </body>
-    </html>
+    <div
+      dir={params.lang === 'ar' ? 'rtl' : 'ltr'}
+      className={cn(params.lang === 'ar' && 'font-sans')}
+    >
+      {children}
+    </div>
   );
 }
