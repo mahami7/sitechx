@@ -30,8 +30,21 @@ function SubmitButton({ dictionary }: { dictionary: any }) {
   );
 }
 
-export default function ContactForm({ dictionary }: { dictionary: any }) {
-  const t = dictionary;
+const defaultDictionary = {
+  nameLabel: "Full Name",
+  namePlaceholder: "John Doe",
+  emailLabel: "Email Address",
+  emailPlaceholder: "john.doe@example.com",
+  phoneLabel: "Phone Number (Optional)",
+  phonePlaceholder: "(123) 456-7890",
+  messageLabel: "Message",
+  messagePlaceholder: "How can we help you today?",
+  submitButton: "Send Message",
+  submitButtonSending: "Sending..."
+};
+
+export default function ContactForm({ dictionary }: { dictionary?: any }) {
+  const t = dictionary || defaultDictionary;
   const initialState = { message: null, errors: {}, success: false };
   const [state, dispatch] = useActionState(submitContactForm, initialState);
   const { toast } = useToast();

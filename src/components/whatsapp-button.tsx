@@ -5,30 +5,28 @@ import { Button, type ButtonProps } from '@/components/ui/button';
 import { WhatsappIcon } from '@/components/icons/whatsapp';
 
 interface WhatsappButtonProps extends ButtonProps {
-  dictionary: {
+  dictionary?: {
     chat: string;
     message: string;
   };
 }
 
-export default function WhatsappButton({ dictionary, ...props }: WhatsappButtonProps) {
-  // The old pages might not pass a dictionary. This prevents a crash.
-  if (!dictionary) {
-    return (
-      <Button {...props} disabled>
-        <WhatsappIcon className="mr-2 h-5 w-5" />
-      </Button>
-    );
-  }
+const defaultDictionary = {
+  chat: "Chat on WhatsApp",
+  message: "Hello! I'm interested in your services and would like to learn more."
+};
 
+
+export default function WhatsappButton({ dictionary, ...props }: WhatsappButtonProps) {
+  const t = dictionary || defaultDictionary;
   const whatsappNumber = '25377871225';
-  const message = encodeURIComponent(dictionary.message);
+  const message = encodeURIComponent(t.message);
   
   return (
     <Button asChild {...props}>
       <Link href={`https://wa.me/${whatsappNumber}?text=${message}`} target="_blank" rel="noopener noreferrer">
         <WhatsappIcon className="mr-2 h-5 w-5" />
-        {dictionary.chat}
+        {t.chat}
       </Link>
     </Button>
   );
