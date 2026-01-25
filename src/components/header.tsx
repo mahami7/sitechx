@@ -10,10 +10,10 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About Us" },
-  { href: "/services", label: "Solutions" },
-  { href: "/contact", label: "Contact" },
+  { href: "/portfolio", label: "Home" },
+  { href: "/portfolio/about", label: "About Us" },
+  { href: "/portfolio/services", label: "Solutions" },
+  { href: "/portfolio/contact", label: "Contact" },
 ];
 
 export default function Header() {
@@ -36,7 +36,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
-        <Link href="/" className="mr-6 flex items-center gap-2">
+        <Link href="/portfolio" className="mr-6 flex items-center gap-2">
           <Image src="/logo.png?v=6" alt="Sitechx" width={180} height={45} />
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
@@ -46,7 +46,7 @@ export default function Header() {
         </nav>
         <div className="flex flex-1 items-center justify-end gap-4">
           <Button asChild className="hidden md:flex" variant="outline">
-            <Link href="/contact">Contact Us</Link>
+            <Link href="/portfolio/contact">Contact Us</Link>
           </Button>
           <Sheet open={isSheetOpen} onOpenChange={setSheetOpen}>
             <SheetTrigger asChild>
@@ -57,7 +57,7 @@ export default function Header() {
             </SheetTrigger>
             <SheetContent side="right">
               <div className="flex flex-col gap-6 p-6">
-                <Link href="/" className="mb-4 flex items-center gap-2">
+                <Link href="/portfolio" className="mb-4 flex items-center gap-2">
                   <Image src="/logo.png?v=6" alt="Sitechx" width={180} height={45} />
                 </Link>
                 <nav className="flex flex-col gap-4">
@@ -66,7 +66,7 @@ export default function Header() {
                   ))}
                 </nav>
                 <Button asChild className="mt-4" onClick={() => setSheetOpen(false)}>
-                  <Link href="/contact">Contact Us</Link>
+                  <Link href="/portfolio/contact">Contact Us</Link>
                 </Button>
               </div>
             </SheetContent>

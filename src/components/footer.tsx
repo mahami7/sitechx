@@ -2,10 +2,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/services', label: 'Services' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/portfolio', label: 'Home' },
+  { href: '/portfolio/about', label: 'About' },
+  { href: '/portfolio/services', label: 'Services' },
+  { href: '/portfolio/contact', label: 'Contact' },
 ];
 
 export default function Footer() {
@@ -14,7 +14,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid gap-8 md:grid-cols-3">
           <div className="flex flex-col gap-2">
-            <Link href="/" className="flex items-center gap-2">
+            <Link href="/portfolio" className="flex items-center gap-2">
               <Image src="/logo.png?v=6" alt="Sitechx" width={180} height={45} />
             </Link>
             <p className="text-muted-foreground text-sm">
