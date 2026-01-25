@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { Menu, Languages } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
@@ -45,6 +45,12 @@ export default function Header() {
           ))}
         </nav>
         <div className="flex flex-1 items-center justify-end gap-4">
+          {/* Translator Container */}
+          <div className="flex items-center gap-2 mr-2">
+            <Languages className="h-4 w-4 text-muted-foreground hidden sm:block" />
+            <div id="google_translate_element" className="translator-wrapper"></div>
+          </div>
+
           <Button asChild className="hidden md:flex" variant="outline">
             <Link href="/contact">Contact Us</Link>
           </Button>
