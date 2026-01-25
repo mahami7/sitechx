@@ -1,6 +1,7 @@
 import Header from '@/components/header';
 import Footer from '@/components/footer';
-import { getDictionary, Locale } from '@/lib/i18n';
+import { getDictionary } from '@/lib/i18n';
+import type { Locale } from '@/lib/i18n-config';
 
 export default async function PortfolioLayout({
   children,

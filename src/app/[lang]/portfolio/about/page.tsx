@@ -3,7 +3,8 @@ import { PlaceHolderImages } from '@/lib/placeholder-data';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Target, Eye } from 'lucide-react';
-import { getDictionary, Locale } from '@/lib/i18n';
+import { getDictionary } from '@/lib/i18n';
+import type { Locale } from '@/lib/i18n-config';
 
 export default async function AboutPage({ params: { lang } }: { params: { lang: Locale }}) {
   const dictionary = await getDictionary(lang);

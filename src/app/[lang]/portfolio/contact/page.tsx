@@ -1,7 +1,8 @@
 import ContactForm from '@/components/contact-form';
 import WhatsappButton from '@/components/whatsapp-button';
 import { Mail, Phone, MapPin } from 'lucide-react';
-import { getDictionary, Locale } from '@/lib/i18n';
+import { getDictionary } from '@/lib/i18n';
+import type { Locale } from '@/lib/i18n-config';
 
 export default async function ContactPage({ params: { lang } }: { params: { lang: Locale }}) {
   const dictionary = await getDictionary(lang);

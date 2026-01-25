@@ -1,6 +1,7 @@
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { servicesData } from "@/lib/data";
-import { getDictionary, Locale } from "@/lib/i18n";
+import { getDictionary } from "@/lib/i18n";
+import type { Locale } from '@/lib/i18n-config';
 
 export default async function ServicesPage({ params: { lang } }: { params: { lang: Locale }}) {
   const dictionary = await getDictionary(lang);

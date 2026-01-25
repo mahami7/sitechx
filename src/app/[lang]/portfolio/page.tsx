@@ -6,7 +6,8 @@ import { servicesData } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-data';
 import { ArrowRight, CheckCircle2, Building, Home as HomeIcon, Hospital, Factory, School } from 'lucide-react';
 import WhatsappButton from '@/components/whatsapp-button';
-import { getDictionary, Locale } from '@/lib/i18n';
+import { getDictionary } from '@/lib/i18n';
+import type { Locale } from '@/lib/i18n-config';
 
 const industries = [
   { nameKey: 'residential', icon: HomeIcon },
