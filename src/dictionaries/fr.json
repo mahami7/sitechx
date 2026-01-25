@@ -1,0 +1,122 @@
+
+{
+  "header": {
+    "home": "Accueil",
+    "about": "À propos de nous",
+    "solutions": "Solutions",
+    "contact": "Contact",
+    "contactUs": "Contactez-nous"
+  },
+  "footer": {
+    "description": "Une expérience de vie et de travail transparente, sécurisée et prête pour l'avenir.",
+    "navigate": "Naviguer",
+    "legal": "Légal",
+    "privacyPolicy": "Politique de confidentialité",
+    "termsOfService": "Conditions d'utilisation",
+    "contact": "Contact",
+    "rightsReserved": "Sitechx Technology Solutions. Tous droits réservés."
+  },
+  "homePage": {
+    "heroTitle": "Une expérience transparente, sécurisée et prête pour l'avenir",
+    "heroSubtitle": "Nous concevons, construisons et entretenons des environnements intelligents pour les maisons, les bureaux et les sites commerciaux, en nous concentrant sur le confort, l'efficacité, la sécurité et la durabilité.",
+    "getConsultation": "Obtenez une consultation gratuite",
+    "whyChooseUsTitle": "Pourquoi nous choisir ?",
+    "whyChooseUsSubtitle": "Nous fournissons des solutions de bout en bout pour créer de véritables écosystèmes intelligents.",
+    "whyChooseUsList": [
+      "Fournisseur unique d'écosystèmes intelligents",
+      "Systèmes entièrement intégrés sur une seule plateforme",
+      "Solutions évolutives pour les projets résidentiels, commerciaux et industriels",
+      "Accent sur la sécurité, l'efficacité et la durabilité",
+      "Conception, installation et support continus professionnels"
+    ],
+    "coreSolutionsTitle": "Nos solutions de base",
+    "coreSolutionsSubtitle": "Un aperçu de la manière dont nous pouvons améliorer votre environnement.",
+    "exploreAllSolutions": "Explorer toutes les solutions",
+    "industriesTitle": "Secteurs que nous servons",
+    "industriesSubtitle": "Fournir des solutions intelligentes sur mesure dans un large éventail de secteurs.",
+    "industriesList": {
+      "residential": "Résidentiel (Maisons & Villas intelligentes)",
+      "commercial": "Bureaux commerciaux & Vente au détail",
+      "hospitality": "Hôtellerie & Santé",
+      "industrial": "Installations industrielles & Centres de données",
+      "educational": "Établissements d'enseignement"
+    },
+    "whoWeAreTitle": "Qui sommes-nous",
+    "whoWeAreDescription": "Sitechx fournit des solutions d'écosystèmes intelligents de bout en bout qui intègrent l'automatisation, la sécurité, l'énergie, les plateformes numériques et l'infrastructure. Nous concevons, construisons et entretenons des environnements intelligents axés sur le confort, l'efficacité, la sécurité et la durabilité.",
+    "learnMore": "En savoir plus sur nous"
+  },
+  "aboutPage": {
+    "title": "À propos de Sitechx",
+    "subtitle": "Pionnier de l'avenir des espaces de vie et de travail intelligents grâce à la technologie et à l'innovation.",
+    "storyTitle": "Notre histoire",
+    "storyP1": "Sitechx fournit des solutions d'écosystèmes intelligents de bout en bout qui intègrent l'automatisation, la sécurité, l'énergie, les plateformes numériques et l'infrastructure. Nous concevons, construisons et entretenons des environnements intelligents pour les maisons, les bureaux, les installations commerciales et les sites industriels, axés sur le confort, l'efficacité, la sécurité et la durabilité.",
+    "storyP2": "Notre promesse est d'offrir une expérience de vie et de travail transparente, sécurisée et prête pour l'avenir. Depuis nos modestes débuts, nous sommes devenus un leader de confiance dans les solutions technologiques intelligentes. Notre parcours est fait d'apprentissage continu, d'adaptation et d'un engagement inébranlable envers la qualité et la satisfaction du client.",
+    "visionTitle": "Notre vision",
+    "visionText": "Créer des environnements intelligents et durables où la technologie fonctionne de manière transparente pour les gens.",
+    "missionTitle": "Notre mission",
+    "missionText": "Fournir des solutions intelligentes fiables, sécurisées et innovantes qui améliorent le confort, la sécurité et l'efficacité opérationnelle de nos clients.",
+    "ctaTitle": "Prêt à construire un avenir plus intelligent ?",
+    "ctaSubtitle": "Discutons de la manière dont nous pouvons intégrer la technologie intelligente dans votre maison ou votre entreprise.",
+    "ctaButton": "Contactez-nous aujourd'hui"
+  },
+  "servicesPage": {
+    "title": "Nos solutions de base",
+    "subtitle": "Nous fournissons une suite complète de services pour créer des environnements entièrement intégrés et intelligents."
+  },
+  "contactPage": {
+    "title": "Contactez-nous",
+    "subtitle": "Vous avez un projet en tête ou souhaitez simplement en savoir plus ? Nous serions ravis de vous entendre.",
+    "infoTitle": "Coordonnées",
+    "email": "Email",
+    "phone": "Téléphone",
+    "office": "Bureau",
+    "officeText": "Société de services desservant des clients à travers Djibouti (sur site et à distance)",
+    "formTitle": "Envoyez-nous un message"
+  },
+  "contactForm": {
+    "nameLabel": "Nom complet",
+    "namePlaceholder": "Jean Dupont",
+    "emailLabel": "Adresse e-mail",
+    "emailPlaceholder": "jean.dupont@example.com",
+    "phoneLabel": "Numéro de téléphone (facultatif)",
+    "phonePlaceholder": "(123) 456-7890",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Comment pouvons-nous vous aider aujourd'hui ?",
+    "submitButton": "Envoyer le message",
+    "submitButtonSending": "Envoi en cours..."
+  },
+  "whatsappButton": {
+    "chat": "Discuter sur WhatsApp",
+    "message": "Bonjour ! Je suis intéressé(e) par vos services et j'aimerais en savoir plus."
+  },
+  "services": {
+    "smartControl": {
+      "title": "Contrôle intelligent & Automatisation",
+      "description": "Contrôle centralisé de l'éclairage, de la climatisation et des appareils avec accès à distance et scénarios d'automatisation personnalisés."
+    },
+    "smartSecurity": {
+      "title": "Sécurité & Surveillance intelligentes",
+      "description": "Systèmes de sécurité intégrés avec caméras 4K, surveillance à distance et alertes instantanées pour une tranquillité d'esprit totale."
+    },
+    "networks": {
+      "title": "Réseaux & Téléphonie IP",
+      "description": "Connectivité fiable et à haut débit avec câblage structuré, solutions de serveur professionnelles et téléphonie IP moderne."
+    },
+    "digitalSolutions": {
+      "title": "Solutions numériques & Services technologiques",
+      "description": "Plateformes numériques personnalisées, solutions de commerce électronique, développement d'applications et conception UI/UX pour faire progresser votre entreprise."
+    },
+    "hvac": {
+      "title": "CVC",
+      "description": "Solutions de chauffage, ventilation et climatisation de précision pour un confort et une efficacité énergétique optimaux."
+    },
+    "fireProtection": {
+      "title": "Protection incendie de précision",
+      "description": "Systèmes avancés de détection et d'extinction d'incendie qui protègent les actifs critiques sans causer de dommages ni d'interruptions."
+    },
+    "solarPower": {
+      "title": "Systèmes d'énergie solaire & Optimisation énergétique",
+      "description": "Solutions d'énergie solaire durables et stratégies d'optimisation pour réduire les coûts et l'impact environnemental."
+    }
+  }
+}

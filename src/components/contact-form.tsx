@@ -10,7 +10,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Loader2, Send } from 'lucide-react';
 
-function SubmitButton() {
+function SubmitButton({ dictionary }: { dictionary: any }) {
   const { pending } = useFormStatus();
 
   return (
@@ -18,19 +18,20 @@ function SubmitButton() {
       {pending ? (
         <>
           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-          Sending...
+          {dictionary.submitButtonSending}
         </>
       ) : (
         <>
           <Send className="mr-2 h-4 w-4" />
-          Send Message
+          {dictionary.submitButton}
         </>
       )}
     </Button>
   );
 }
 
-export default function ContactForm() {
+export default function ContactForm({ dictionary }: { dictionary: any }) {
+  const t = dictionary;
   const initialState = { message: null, errors: {}, success: false };
   const [state, dispatch] = useActionState(submitContactForm, initialState);
   const { toast } = useToast();
@@ -57,34 +58,34 @@ export default function ContactForm() {
   return (
     <form ref={formRef} action={dispatch} className="space-y-6">
       <div className="space-y-2">
-        <Label htmlFor="name">Full Name</Label>
-        <Input id="name" name="name" placeholder="John Doe" required />
+        <Label htmlFor="name">{t.nameLabel}</Label>
+        <Input id="name" name="name" placeholder={t.namePlaceholder} required />
         {state.errors?.name && (
           <p className="text-sm font-medium text-destructive">{state.errors.name}</p>
         )}
       </div>
       <div className="space-y-2">
-        <Label htmlFor="email">Email Address</Label>
-        <Input id="email" name="email" type="email" placeholder="john.doe@example.com" required />
+        <Label htmlFor="email">{t.emailLabel}</Label>
+        <Input id="email" name="email" type="email" placeholder={t.emailPlaceholder} required />
          {state.errors?.email && (
           <p className="text-sm font-medium text-destructive">{state.errors.email}</p>
         )}
       </div>
       <div className="space-y-2">
-        <Label htmlFor="phone">Phone Number (Optional)</Label>
-        <Input id="phone" name="phone" type="tel" placeholder="(123) 456-7890" />
+        <Label htmlFor="phone">{t.phoneLabel}</Label>
+        <Input id="phone" name="phone" type="tel" placeholder={t.phonePlaceholder} />
          {state.errors?.phone && (
           <p className="text-sm font-medium text-destructive">{state.errors.phone}</p>
         )}
       </div>
       <div className="space-y-2">
-        <Label htmlFor="message">Message</Label>
-        <Textarea id="message" name="message" placeholder="How can we help you today?" required minLength={10} />
+        <Label htmlFor="message">{t.messageLabel}</Label>
+        <Textarea id="message" name="message" placeholder={t.messagePlaceholder} required minLength={10} />
         {state.errors?.message && (
           <p className="text-sm font-medium text-destructive">{state.errors.message}</p>
         )}
       </div>
-      <SubmitButton />
+      <SubmitButton dictionary={t} />
     </form>
   );
 }

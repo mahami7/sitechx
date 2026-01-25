@@ -1,29 +1,31 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { Locale } from '@/lib/i18n';
 
-const navLinks = [
-  { href: '/portfolio', label: 'Home' },
-  { href: '/portfolio/about', label: 'About' },
-  { href: '/portfolio/services', label: 'Services' },
-  { href: '/portfolio/contact', label: 'Contact' },
-];
+export default function Footer({ lang, dictionary }: { lang: Locale, dictionary: any }) {
+  const t = dictionary.footer;
+  const navLinks = [
+    { href: `/${lang}/portfolio`, label: dictionary.header.home },
+    { href: `/${lang}/portfolio/about`, label: dictionary.header.about },
+    { href: `/${lang}/portfolio/services`, label: dictionary.header.solutions },
+    { href: `/${lang}/portfolio/contact`, label: dictionary.header.contact },
+  ];
 
-export default function Footer() {
   return (
     <footer className="border-t bg-secondary">
       <div className="container mx-auto px-4 py-12">
         <div className="grid gap-8 md:grid-cols-3">
           <div className="flex flex-col gap-2">
-            <Link href="/portfolio" className="flex items-center gap-2">
+            <Link href={`/${lang}/portfolio`} className="flex items-center gap-2">
               <Image src="/logo.png?v=6" alt="Sitechx" width={180} height={45} />
             </Link>
             <p className="text-muted-foreground text-sm">
-              A seamless, secure, and future-ready living and working experience.
+              {t.description}
             </p>
           </div>
           <div className="md:col-span-2 grid grid-cols-2 sm:grid-cols-3 gap-8">
             <div>
-              <h4 className="font-semibold mb-2">Navigate</h4>
+              <h4 className="font-semibold mb-2">{t.navigate}</h4>
               <ul className="space-y-2">
                 {navLinks.map((link) => (
                   <li key={link.href}>
@@ -35,22 +37,22 @@ export default function Footer() {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-2">Legal</h4>
+              <h4 className="font-semibold mb-2">{t.legal}</h4>
               <ul className="space-y-2">
                 <li>
                   <Link href="#" className="text-sm text-muted-foreground hover:text-primary">
-                    Privacy Policy
+                    {t.privacyPolicy}
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="text-sm text-muted-foreground hover:text-primary">
-                    Terms of Service
+                    {t.termsOfService}
                   </Link>
                 </li>
               </ul>
             </div>
              <div>
-              <h4 className="font-semibold mb-2">Contact</h4>
+              <h4 className="font-semibold mb-2">{t.contact}</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li><a href="mailto:sitechx.dj@gmail.com" className="hover:text-primary">sitechx.dj@gmail.com</a></li>
                 <li><a href="tel:+25377871225" className="hover:text-primary">+253 77 87 12 25</a></li>
@@ -59,7 +61,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-8 border-t pt-6 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Sitechx Technology Solutions. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} {t.rightsReserved}</p>
         </div>
       </div>
     </footer>

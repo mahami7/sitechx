@@ -8,17 +8,19 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { Locale } from "@/lib/i18n";
 
-const navLinks = [
-  { href: "/portfolio", label: "Home" },
-  { href: "/portfolio/about", label: "About Us" },
-  { href: "/portfolio/services", label: "Solutions" },
-  { href: "/portfolio/contact", label: "Contact" },
-];
-
-export default function Header() {
+export default function Header({ lang, dictionary }: { lang: Locale, dictionary: any }) {
   const pathname = usePathname();
   const [isSheetOpen, setSheetOpen] = useState(false);
+  const t = dictionary.header;
+
+  const navLinks = [
+    { href: `/${lang}/portfolio`, label: t.home },
+    { href: `/${lang}/portfolio/about`, label: t.about },
+    { href: `/${lang}/portfolio/services`, label: t.solutions },
+    { href: `/${lang}/portfolio/contact`, label: t.contact },
+  ];
 
   const NavLink = ({ href, label }: { href: string; label: string }) => (
     <Link
@@ -36,7 +38,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
-        <Link href="/portfolio" className="mr-6 flex items-center gap-2">
+        <Link href={`/${lang}/portfolio`} className="mr-6 flex items-center gap-2">
           <Image src="/logo.png?v=6" alt="Sitechx" width={180} height={45} />
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
@@ -46,7 +48,7 @@ export default function Header() {
         </nav>
         <div className="flex flex-1 items-center justify-end gap-4">
           <Button asChild className="hidden md:flex" variant="outline">
-            <Link href="/portfolio/contact">Contact Us</Link>
+            <Link href={`/${lang}/portfolio/contact`}>{t.contactUs}</Link>
           </Button>
           <Sheet open={isSheetOpen} onOpenChange={setSheetOpen}>
             <SheetTrigger asChild>
@@ -55,9 +57,9 @@ export default function Header() {
                 <span className="sr-only">Toggle Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right">
+            <SheetContent side={lang === 'ar' ? 'left' : 'right'}>
               <div className="flex flex-col gap-6 p-6">
-                <Link href="/portfolio" className="mb-4 flex items-center gap-2">
+                <Link href={`/${lang}/portfolio`} className="mb-4 flex items-center gap-2">
                   <Image src="/logo.png?v=6" alt="Sitechx" width={180} height={45} />
                 </Link>
                 <nav className="flex flex-col gap-4">
@@ -66,7 +68,7 @@ export default function Header() {
                   ))}
                 </nav>
                 <Button asChild className="mt-4" onClick={() => setSheetOpen(false)}>
-                  <Link href="/portfolio/contact">Contact Us</Link>
+                  <Link href={`/${lang}/portfolio/contact`}>{t.contactUs}</Link>
                 </Button>
               </div>
             </SheetContent>

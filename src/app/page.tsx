@@ -19,13 +19,13 @@ export default function LanguageSelectionPage() {
         </div>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button asChild size="lg" className="w-full sm:w-auto">
-            <Link href="/portfolio">English</Link>
+            <Link href="/en/portfolio">English</Link>
           </Button>
           <Button asChild size="lg" variant="secondary" className="w-full sm:w-auto">
-            <Link href="/portfolio">Français</Link>
+            <Link href="/fr/portfolio">Français</Link>
           </Button>
           <Button asChild size="lg" variant="secondary" dir="rtl" className="w-full sm:w-auto">
-            <Link href="/portfolio">العربية</Link>
+            <Link href="/ar/portfolio">العربية</Link>
           </Button>
         </div>
          <p className="text-muted-foreground">You will be able to change this later.</p>

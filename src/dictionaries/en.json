@@ -1,0 +1,122 @@
+
+{
+  "header": {
+    "home": "Home",
+    "about": "About Us",
+    "solutions": "Solutions",
+    "contact": "Contact",
+    "contactUs": "Contact Us"
+  },
+  "footer": {
+    "description": "A seamless, secure, and future-ready living and working experience.",
+    "navigate": "Navigate",
+    "legal": "Legal",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "contact": "Contact",
+    "rightsReserved": "Sitechx Technology Solutions. All Rights Reserved."
+  },
+  "homePage": {
+    "heroTitle": "A Seamless, Secure, and Future-Ready Experience",
+    "heroSubtitle": "We design, build, and maintain intelligent environments for homes, offices, and commercial sites—focused on comfort, efficiency, safety, and sustainability.",
+    "getConsultation": "Get a Free Consultation",
+    "whyChooseUsTitle": "Why Choose Us?",
+    "whyChooseUsSubtitle": "We provide end-to-end solutions to create truly smart ecosystems.",
+    "whyChooseUsList": [
+      "One-stop smart ecosystem provider",
+      "Fully integrated systems under a single platform",
+      "Scalable solutions for residential, commercial, and industrial projects",
+      "Focus on security, efficiency, and sustainability",
+      "Professional design, installation, and ongoing support"
+    ],
+    "coreSolutionsTitle": "Our Core Solutions",
+    "coreSolutionsSubtitle": "A glimpse into how we can elevate your environment.",
+    "exploreAllSolutions": "Explore All Solutions",
+    "industriesTitle": "Industries We Serve",
+    "industriesSubtitle": "Delivering tailored smart solutions across a wide range of sectors.",
+    "industriesList": {
+      "residential": "Residential (Smart Homes & Villas)",
+      "commercial": "Commercial Offices & Retail",
+      "hospitality": "Hospitality & Healthcare",
+      "industrial": "Industrial Facilities & Data Centers",
+      "educational": "Educational Institutions"
+    },
+    "whoWeAreTitle": "Who We Are",
+    "whoWeAreDescription": "Sitechx delivers end-to-end smart ecosystem solutions that integrate automation, security, energy, digital platforms, and infrastructure. We design, build, and maintain intelligent environments focused on comfort, efficiency, safety, and sustainability.",
+    "learnMore": "Learn More About Us"
+  },
+  "aboutPage": {
+    "title": "About Sitechx",
+    "subtitle": "Pioneering the future of intelligent living and working spaces through technology and innovation.",
+    "storyTitle": "Our Story",
+    "storyP1": "Sitechx delivers end-to-end smart ecosystem solutions that integrate automation, security, energy, digital platforms, and infrastructure. We design, build, and maintain intelligent environments for homes, offices, commercial facilities, and industrial sites—focused on comfort, efficiency, safety, and sustainability.",
+    "storyP2": "Our promise is to deliver a seamless, secure, and future-ready living and working experience. From our humble beginnings, we have grown into a trusted leader in smart technology solutions. Our journey is one of continuous learning, adaptation, and an unwavering commitment to quality and customer satisfaction.",
+    "visionTitle": "Our Vision",
+    "visionText": "To create intelligent, sustainable environments where technology works seamlessly for people.",
+    "missionTitle": "Our Mission",
+    "missionText": "To deliver reliable, secure, and innovative smart solutions that enhance comfort, safety, and operational efficiency for our clients.",
+    "ctaTitle": "Ready to build a smarter future?",
+    "ctaSubtitle": "Let's discuss how we can bring smart technology to your home or business.",
+    "ctaButton": "Contact Us Today"
+  },
+  "servicesPage": {
+    "title": "Our Core Solutions",
+    "subtitle": "We provide a comprehensive suite of services to create fully integrated, intelligent environments."
+  },
+  "contactPage": {
+    "title": "Get in Touch",
+    "subtitle": "Have a project in mind or just want to learn more? We'd love to hear from you.",
+    "infoTitle": "Contact Information",
+    "email": "Email",
+    "phone": "Phone",
+    "office": "Office",
+    "officeText": "Service-based company serving clients across Djibouti (On-site & Remote)",
+    "formTitle": "Send us a Message"
+  },
+  "contactForm": {
+    "nameLabel": "Full Name",
+    "namePlaceholder": "John Doe",
+    "emailLabel": "Email Address",
+    "emailPlaceholder": "john.doe@example.com",
+    "phoneLabel": "Phone Number (Optional)",
+    "phonePlaceholder": "(123) 456-7890",
+    "messageLabel": "Message",
+    "messagePlaceholder": "How can we help you today?",
+    "submitButton": "Send Message",
+    "submitButtonSending": "Sending..."
+  },
+  "whatsappButton": {
+    "chat": "Chat on WhatsApp",
+    "message": "Hello! I'm interested in your services and would like to learn more."
+  },
+  "services": {
+    "smartControl": {
+      "title": "Smart Control & Automation",
+      "description": "Centralized control of lighting, climate, and appliances with remote access and personalized automation scenarios."
+    },
+    "smartSecurity": {
+      "title": "Smart Security & Surveillance",
+      "description": "Integrated security systems with 4K cameras, remote monitoring, and instant alerts for total peace of mind."
+    },
+    "networks": {
+      "title": "Networks & IP Telephony",
+      "description": "Reliable, high-speed connectivity with structured cabling, professional server solutions, and modern IP telephony."
+    },
+    "digitalSolutions": {
+      "title": "Digital Solutions & Technology Services",
+      "description": "Custom digital platforms, e-commerce solutions, app development, and UI/UX design to elevate your business."
+    },
+    "hvac": {
+      "title": "HVAC",
+      "description": "Precision heating, ventilation, and air conditioning solutions for optimal comfort and energy efficiency."
+    },
+    "fireProtection": {
+      "title": "Precision Fire Protection",
+      "description": "Advanced fire detection and suppression systems that protect critical assets without causing damage or downtime."
+    },
+    "solarPower": {
+      "title": "Solar Power Systems & Energy Optimization",
+      "description": "Sustainable solar energy solutions and optimization strategies to reduce costs and environmental impact."
+    }
+  }
+}

@@ -4,6 +4,7 @@ export type Service = {
   title: string;
   description: string;
   icon: LucideIcon;
+  key: string;
 };
 
 export type ImagePlaceholder = {
